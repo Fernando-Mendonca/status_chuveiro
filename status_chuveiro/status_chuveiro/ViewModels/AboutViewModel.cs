@@ -10,7 +10,7 @@ namespace status_chuveiro.ViewModels
         public AboutViewModel()
         {
             Title = "About";
-            OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://aka.ms/xamarin-quickstart"));
+           // OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://aka.ms/xamarin-quickstart"));
         }
 
         public ICommand OpenWebCommand { get; }
