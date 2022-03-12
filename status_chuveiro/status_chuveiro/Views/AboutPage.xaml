@@ -20,6 +20,10 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
         <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
                 <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
@@ -28,25 +32,33 @@
             </StackLayout>
         </StackLayout>
         <ScrollView Grid.Row="1">
+
             <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
                 <Label Text="Descrição do Aplicativo" FontSize="Title"/>
                 <Label Text="Aplicativo desenvolvido para que as pessoas com baixo custo resolvam os problemas de queda de disjuntores." FontSize="16" Padding="0,0,0,0"/>
+                
+                   
+                        <Label Text="Defina o tempo do seu banho: " />
+                <RadioButton Content="15 minutos" CheckedChanged="definirtempo"  Grid.Row="0" Grid.Column="1" />
+                        <RadioButton Content="20 minutos" CheckedChanged="definirtempo" />
+                        <RadioButton Content="25 minutos" CheckedChanged="definirtempo" />
+                        <Label x:Name="txttempo" TextColor="Red" />
+                <Label x:Name="contador" Text="Contador"  Grid.Row="0" Grid.Column="0"/>
+
+
+
                 <StackLayout>
-    <Label Text="Defina o tempo do seu banho: " />
-    <RadioButton Content="15 minutos" CheckedChanged="definirtempo" IsChecked="true" />
-    <RadioButton Content="20 minutos" CheckedChanged="definirtempo" />
-    <RadioButton Content="25 minutos" CheckedChanged="definirtempo" />
-                    <Label x:Name="txttempo" />
-
-                </StackLayout>
 
 
-                <Button Margin="0,10,0,0" Text="Iniciar Banho"
-                        Command="{Binding OpenWebCommand}"
+                        <Button Margin="0,10,0,0" Text="Iniciar Banho"
+                        Clicked="buttonClick"
                         BackgroundColor="{StaticResource Primary}"
                         TextColor="White" />
-                <Label Text="CHUVEIRO OCUPADO!!!"/>
+                        <Label x:Name="txtstatus" TextColor="red" />
+                </StackLayout>
+                
             </StackLayout>
+           
         </ScrollView>
     </Grid>
 

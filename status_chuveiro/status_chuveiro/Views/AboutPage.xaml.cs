@@ -14,9 +14,15 @@ namespace status_chuveiro.Views
 
         private void definirtempo(object sender, CheckedChangedEventArgs e)
         {
-            RadioButton novo = sender as RadioButton;
+            //RadioButton novo = sender as RadioButton;
             txttempo.Text = "Definindo Tempo!";
+            txtstatus.Text = "Para iniciar o banho clique no botão acima";
 
+        }
+
+        private void buttonClick(object sender, EventArgs e)
+        {
+            txtstatus.Text = "CHUVEIRO OCUPADO";
         }
     }
 }
